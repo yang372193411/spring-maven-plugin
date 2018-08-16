@@ -68,11 +68,11 @@ public class MyCommentGenerator implements CommentGenerator {
 //        sb.append(introspectedTable.getFullyQualifiedTable());
 //        sb.append(" ");
 //        sb.append(getDateString());
-//        innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
+//       r innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
 //        innerClass.addJavaDocLine(" */");
         innerClass.addJavaDocLine("/**");
         innerClass.addJavaDocLine(" * @Title "+introspectedTable.getFullyQualifiedTable()+"表的实体类");
-        innerClass.addJavaDocLine(" * @Description "+introspectedTable.getFullyQualifiedTable());//.getRemarks());
+        innerClass.addJavaDocLine(" * @Description "+introspectedTable.getFullyQualifiedTable().getRemark());
         innerClass.addJavaDocLine(" * @version 1.0");
         innerClass.addJavaDocLine(" * @Author yang");
         innerClass.addJavaDocLine(" * @Date " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
@@ -102,7 +102,7 @@ public class MyCommentGenerator implements CommentGenerator {
 //        innerClass.addJavaDocLine(" */");
         innerClass.addJavaDocLine("/**");
         innerClass.addJavaDocLine(" * @Title "+introspectedTable.getFullyQualifiedTable()+"表的实体类");
-        innerClass.addJavaDocLine(" * @Description "+introspectedTable.getFullyQualifiedTable().getIntrospectedTableName());//.getRemarks());
+        innerClass.addJavaDocLine(" * @Description "+introspectedTable.getFullyQualifiedTable().getRemark());
         innerClass.addJavaDocLine(" * @version 1.0");
         innerClass.addJavaDocLine(" * @Author yang");
         innerClass.addJavaDocLine(" * @Date " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
@@ -124,13 +124,8 @@ public class MyCommentGenerator implements CommentGenerator {
     }
 
     /**
-     * @return
-     * @throws
-     * @Title addConfigurationProperties
-     * @Description: 从该配置中的任何属性添加此实例的属性CommentGenerator配置。
+     * 从该配置中的任何属性添加此实例的属性CommentGenerator配置。
      * 这个方法将在任何其他方法之前被调用。
-     * @Author fendo
-     * @Date 2017年10月5日 下午3:45:58
      */
     @Override
     public void addConfigurationProperties(Properties properties) {
@@ -140,12 +135,7 @@ public class MyCommentGenerator implements CommentGenerator {
     }
 
     /**
-     * @return
-     * @throws
-     * @Title getDateString
-     * @Description: 此方法返回格式化的日期字符串以包含在Javadoc标记中和XML注释。 如果您不想要日期，则可以返回null在这些文档元素中。
-     * @Author fendo
-     * @Date 2017年10月5日 下午3:45:58
+     * 此方法返回格式化的日期字符串以包含在Javadoc标记中和XML注释。 如果您不想要日期，则可以返回null在这些文档元素中。
      */
     protected String getDateString() {
         String result = null;
@@ -156,13 +146,7 @@ public class MyCommentGenerator implements CommentGenerator {
     }
 
     /**
-     * @param javaElement
-     * @param markAsDoNotDelete
-     * @throws
-     * @Title addJavadocTag
-     * @Description: 此方法为其添加了自定义javadoc标签。
-     * @Author fendo
-     * @Date 2017年10月5日 下午3:49:05
+     * 此方法为其添加了自定义javadoc标签。
      */
     protected void addJavadocTag(JavaElement javaElement, boolean markAsDoNotDelete) {
         javaElement.addJavaDocLine(" *");
