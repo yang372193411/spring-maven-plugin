@@ -736,7 +736,9 @@ public class DatabaseIntrospector {
             calculatePrimaryKey(table, introspectedTable);
             
             enhanceIntrospectedTable(introspectedTable);
-
+            if(introspectedTable.getRemarks() == null || "".equals(introspectedTable.getRemarks())){
+                introspectedTable.setRemarks(introspectedTable.getFullyQualifiedTable().getRemark());
+            }
             answer.add(introspectedTable);
         }
 
