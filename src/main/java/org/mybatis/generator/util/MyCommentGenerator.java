@@ -59,17 +59,6 @@ public class MyCommentGenerator implements CommentGenerator {
      */
     @Override
     public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable) {
-//        if (suppressAllComments) {
-//            return;
-//        }
-//        StringBuilder sb = new StringBuilder();
-//        innerClass.addJavaDocLine("/**");
-//        sb.append(" * ");
-//        sb.append(introspectedTable.getFullyQualifiedTable());
-//        sb.append(" ");
-//        sb.append(getDateString());
-//       r innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
-//        innerClass.addJavaDocLine(" */");
         innerClass.addJavaDocLine("/**");
         innerClass.addJavaDocLine(" * @Title "+introspectedTable.getFullyQualifiedTable()+"表的实体类");
         innerClass.addJavaDocLine(" * @Description "+introspectedTable.getFullyQualifiedTable().getRemark());
@@ -85,21 +74,6 @@ public class MyCommentGenerator implements CommentGenerator {
      */
     @Override
     public void addClassComment(InnerClass innerClass, IntrospectedTable introspectedTable, boolean markAsDoNotDelete) {
-//        if (suppressAllComments) {
-//            return;
-//        }
-//        StringBuilder sb = new StringBuilder();
-//        innerClass.addJavaDocLine("/**");
-//        sb.append(" * ");
-//        sb.append(" * ");
-//        sb.append(introspectedTable.getFullyQualifiedTable());
-//        innerClass.addJavaDocLine(sb.toString().replace("\n", " "));
-//        sb.setLength(0);
-//        sb.append(" * @author ");
-//        sb.append(systemPro.getProperty("user.name"));
-//        sb.append(" ");
-//        sb.append(currentDateStr);
-//        innerClass.addJavaDocLine(" */");
         innerClass.addJavaDocLine("/**");
         innerClass.addJavaDocLine(" * @Title "+introspectedTable.getFullyQualifiedTable()+"表的实体类");
         innerClass.addJavaDocLine(" * @Description "+introspectedTable.getFullyQualifiedTable().getRemark());

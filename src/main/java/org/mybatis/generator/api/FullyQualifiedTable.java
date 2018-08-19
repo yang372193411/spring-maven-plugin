@@ -15,14 +15,14 @@
  */
 package org.mybatis.generator.api;
 
-import org.mybatis.generator.config.Context;
-
 import static org.mybatis.generator.internal.util.EqualsUtil.areEqual;
 import static org.mybatis.generator.internal.util.HashCodeUtil.SEED;
 import static org.mybatis.generator.internal.util.HashCodeUtil.hash;
 import static org.mybatis.generator.internal.util.JavaBeansUtil.getCamelCaseString;
 import static org.mybatis.generator.internal.util.StringUtility.composeFullyQualifiedTableName;
 import static org.mybatis.generator.internal.util.StringUtility.stringHasValue;
+
+import org.mybatis.generator.config.Context;
 
 /**
  * The Class FullyQualifiedTable.
@@ -67,13 +67,15 @@ public class FullyQualifiedTable {
     /** The ending delimiter. */
     private String endingDelimiter;
 
-    /**数据库表的备注信息*/
+    /** 数据库表的备注信息  */
     private String remark;
-    /**数据库表的备注信息*/
+
+    /** 数据库表的备注信息  */
     public String getRemark() {
         return remark;
     }
-    /**数据库表的备注信息*/
+
+    /** 数据库表的备注信息  */
     public void setRemark(String remark) {
         this.remark = remark;
     }
@@ -117,11 +119,11 @@ public class FullyQualifiedTable {
      *            the context
      */
     public FullyQualifiedTable(String introspectedCatalog,
-                               String introspectedSchema, String introspectedTableName,
-                               String domainObjectName, String alias,
-                               boolean ignoreQualifiersAtRuntime, String runtimeCatalog,
-                               String runtimeSchema, String runtimeTableName,
-                               boolean delimitIdentifiers, Context context) {
+            String introspectedSchema, String introspectedTableName,
+            String domainObjectName, String alias,
+            boolean ignoreQualifiersAtRuntime, String runtimeCatalog,
+            String runtimeSchema, String runtimeTableName,
+            boolean delimitIdentifiers, Context context) {
         super();
         this.introspectedCatalog = introspectedCatalog;
         this.introspectedSchema = introspectedSchema;
